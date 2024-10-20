@@ -1,0 +1,60 @@
+@use "../../styles/variables" as v;
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 6vw;
+  border-bottom: 0.5rem solid v.$main-color;
+  .logo {
+    height: 100%;
+    width: auto;
+  }
+  .navOptions {
+    display: flex;
+    gap: 2rem;
+    & > h3 {
+      font-family: v.$title-font;
+      font-weight: 700;
+      position: relative;
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 3px;
+        background-color: v.$secondary-color;
+        position: absolute;
+        bottom: -0.2rem;
+        transition: width 0.3s ease-in-out;
+      }
+      &:hover {
+        cursor: pointer;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .navButtons {
+    display: flex;
+    gap: 1.5rem;
+    a {
+      text-decoration: none;
+      color: white;
+      background-color: v.$main-color;
+      width: 5.7rem;
+      padding: 0.6rem 0;
+      text-align: center;
+      border-radius: 0.8rem;
+      font-family: v.$main-font;
+      font-weight: 700;
+      box-shadow: 0 4px v.$neutral-color;
+      transition: transform 0.2s linear;
+      &:hover {
+        transform: translateY(2.5px);
+      }
+    }
+  }
+  .profileMenu {
+  }
+}
