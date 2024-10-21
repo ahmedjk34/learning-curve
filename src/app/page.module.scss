@@ -12,6 +12,8 @@
       padding: 3rem;
       display: flex;
       flex-direction: column;
+      animation: slideInLeft 1s ease-out forwards;
+
       h1 {
         font-family: v.$title-font;
         text-transform: capitalize;
@@ -50,6 +52,30 @@
       width: auto;
       max-height: 75vh;
       margin: auto;
+      animation: slideInRight 1s ease-out forwards;
     }
+  }
+}
+
+// Keyframes for sliding in
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
