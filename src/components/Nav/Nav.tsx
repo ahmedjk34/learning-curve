@@ -13,7 +13,9 @@ function Nav({}: Props) {
   const isAuthenticated = false; //placeholder
   return (
     <div className={styles.nav}>
-      <img src={"./logo.png"} className={styles.logo} alt="Logo"></img>
+      <Link href={"/"} className={styles.logo}>
+        <img src={"./logo.png"} alt="Logo"></img>
+      </Link>
       <div style={groupStyle}>
         <div className={styles.navOptions}>
           <h3>Home</h3>
