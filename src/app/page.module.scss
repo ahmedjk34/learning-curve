@@ -1,0 +1,55 @@
+@use "../styles/variables" as v;
+.homePage {
+  .hero {
+    display: grid;
+    grid-template: 1fr /1fr 1fr;
+    padding: 1.25rem;
+    box-shadow: 0 10px v.$primary-color, 0px 14px v.$neutral-color;
+    // border-radius: 1rem;
+    .heroInfo {
+      font-family: v.$primary-font;
+      font-weight: 400;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      h1 {
+        font-family: v.$title-font;
+        text-transform: capitalize;
+        font-size: 2.8rem;
+      }
+      p {
+        margin-top: 1rem;
+        font-size: 1.1rem;
+      }
+      .heroActionsHolder {
+        display: flex;
+        gap: 1rem;
+        margin: auto 0;
+        a {
+          text-decoration: none;
+          color: inherit;
+          background-color: v.$secondary-color;
+          color: white;
+          padding: 0.75rem 2rem;
+          border-radius: 0.5rem;
+          display: flex;
+          align-items: center;
+          transition: all 0.2s linear;
+          &:hover {
+            transform: scale(1.05) translateY(2px);
+          }
+          &:nth-child(2) {
+            background: none;
+            border: 2px solid v.$primary-color;
+            color: v.$text-color;
+          }
+        }
+      }
+    }
+    .heroImage {
+      width: auto;
+      max-height: 75vh;
+      margin: auto;
+    }
+  }
+}
