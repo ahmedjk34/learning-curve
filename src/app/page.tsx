@@ -1,10 +1,12 @@
 import Link from "next/link";
 import styles from "./page.module.scss";
+import { Course } from "@/Types";
 
 export default function Home() {
   return (
     <div className={styles.homePage}>
       <Hero />
+      <FeaturedCourses />
     </div>
   );
 }
@@ -37,4 +39,8 @@ function Hero() {
       />
     </div>
   );
+}
+
+function FeaturedCourses(courses: { courses: Course }) {
+  return <div></div>;
 }
