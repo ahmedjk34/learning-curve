@@ -23,6 +23,7 @@ export interface Course extends Document {
   enrolledStudents: number;
   learningGoals: string[];
   prerequisites: string[];
+  rating: number;
   reviews: Review[]; // Array of review objects
   episodes: Content[]; // Array of episode objects
   coverImg: string;
