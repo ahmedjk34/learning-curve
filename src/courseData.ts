@@ -24,21 +24,21 @@ const tempCourses: Course[] = [
     episodes: [
       {
         title: "Introduction to HTML",
-        contentType: "video",
+        contentType: "Video",
         contentUrl: "https://example.com/html",
         duration: 20,
         order: 1,
       },
       {
         title: "CSS Fundamentals",
-        contentType: "video",
+        contentType: "Video",
         contentUrl: "https://example.com/css",
         duration: 30,
         order: 2,
       },
       {
         title: "JavaScript Basics",
-        contentType: "video",
+        contentType: "Video",
         contentUrl: "https://example.com/js",
         duration: 45,
         order: 3,
@@ -76,21 +76,21 @@ const tempCourses: Course[] = [
     episodes: [
       {
         title: "Data Analysis with Pandas",
-        contentType: "video",
+        contentType: "Video",
         contentUrl: "https://example.com/pandas",
         duration: 50,
         order: 1,
       },
       {
         title: "Data Visualization with Matplotlib",
-        contentType: "video",
+        contentType: "Video",
         contentUrl: "https://example.com/matplotlib",
         duration: 40,
         order: 2,
       },
       {
         title: "Machine Learning Basics",
-        contentType: "video",
+        contentType: "Video",
         contentUrl: "https://example.com/ml",
         duration: 60,
         order: 3,
@@ -127,21 +127,21 @@ const tempCourses: Course[] = [
     episodes: [
       {
         title: "Dynamic Programming",
-        contentType: "video",
+        contentType: "Video",
         contentUrl: "https://example.com/dp",
         duration: 70,
         order: 1,
       },
       {
         title: "Graph Algorithms",
-        contentType: "video",
+        contentType: "Video",
         contentUrl: "https://example.com/graph",
         duration: 60,
         order: 2,
       },
       {
         title: "Advanced Data Structures",
-        contentType: "video",
+        contentType: "Video",
         contentUrl: "https://example.com/ds",
         duration: 80,
         order: 3,
@@ -178,21 +178,21 @@ const tempCourses: Course[] = [
     episodes: [
       {
         title: "Introduction to AI",
-        contentType: "video",
+        contentType: "Video",
         contentUrl: "https://example.com/ai",
         duration: 30,
         order: 1,
       },
       {
         title: "Machine Learning Basics",
-        contentType: "video",
+        contentType: "Video",
         contentUrl: "https://example.com/ml",
         duration: 50,
         order: 2,
       },
       {
         title: "Neural Networks",
-        contentType: "video",
+        contentType: "Video",
         contentUrl: "https://example.com/nn",
         duration: 45,
         order: 3,
