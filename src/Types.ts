@@ -10,7 +10,7 @@ interface Review extends Document {
 
 interface Content extends Document {
   title: string;
-  contentType: ["Video", "Quiz"];
+  contentType: "Video" | "Quiz";
   contentUrl: string;
   duration: number;
   order: number;
