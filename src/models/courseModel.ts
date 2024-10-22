@@ -105,6 +105,10 @@ const courseSchema = new Schema({
     type: Number,
     default: 0,
   },
+  rating: {
+    type: Number,
+    default: 0,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
@@ -114,13 +118,22 @@ const courseSchema = new Schema({
 courseSchema.pre("save", function (next: any) {
   const course: Course = this as Course;
 
+  // Calculate total duration
   if (course.episodes && course.episodes.length > 0) {
-    // Sum the episode durations
     const totalDurationInMinutes = course.episodes.reduce((total, episode) => {
       return total + episode.duration;
     }, 0);
 
-    course.duration = totalDurationInMinutes / 60;
+    course.duration = totalDurationInMinutes / 60; // Convert minutes to hours
+  }
+
+  // Calculate average rating
+  if (course.reviews && course.reviews.length > 0) {
+    const totalRating = course.reviews.reduce((sum, review) => {
+      return sum + review.rating;
+    }, 0);
+
+    course.rating = totalRating / course.reviews.length;
   }
 
   next();
