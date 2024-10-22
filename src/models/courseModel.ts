@@ -70,6 +70,10 @@ const courseSchema = new Schema({
     type: Number,
     default: 0,
   },
+  rating: {
+    type: Number,
+    default: 0,
+  },
   learningGoals: {
     type: [String],
     required: true,
