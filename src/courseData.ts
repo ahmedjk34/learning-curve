@@ -1,6 +1,6 @@
 import { Course } from "./Types";
 
-const tempCourses: Course[] = [
+const courseData: Course[] = [
   {
     title: "Introduction to Web Development",
     description:
@@ -208,4 +208,4 @@ const tempCourses: Course[] = [
   },
 ];
 
-module.exports = tempCourses;
+export default courseData;
