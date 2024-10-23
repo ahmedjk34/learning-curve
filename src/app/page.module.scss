@@ -1,4 +1,5 @@
 @use "../styles/variables" as v;
+@use "../styles/mixins" as m;
 .homePage {
   .hero {
     display: grid;
@@ -53,6 +54,22 @@
       max-height: 75vh;
       margin: auto;
       animation: slideInRight 1s ease-out forwards;
+    }
+  }
+  .featuredCourses {
+    margin-top: 2rem;
+    h1 {
+      @include m.title;
+    }
+    .coursesHolder {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      padding: 2rem 2.5rem;
+      div {
+        height: 400px;
+        min-width: 300px;
+      }
     }
   }
 }
