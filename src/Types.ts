@@ -1,14 +1,14 @@
 import { Schema, Document } from "mongoose";
 
 // Define the review interface
-interface Review extends Document {
+interface Review {
   author: Schema.Types.ObjectId; // Reference to a User model
   body: string;
   rating: number;
   createdAt: Date;
 }
 
-interface Content extends Document {
+interface Content {
   title: string;
   contentType: "Video" | "Quiz";
   contentUrl: string;
@@ -17,7 +17,7 @@ interface Content extends Document {
 }
 
 // Define the course interface
-export interface Course extends Document {
+export interface Course {
   title: string;
   description: string;
   enrolledStudents: number;
