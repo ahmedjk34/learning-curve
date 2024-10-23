@@ -1,12 +1,13 @@
 import Link from "next/link";
 import styles from "./page.module.scss";
 import { Course } from "@/Types";
+import courseData from "@/courseData";
 
 export default function Home() {
   return (
     <div className={styles.homePage}>
       <Hero />
-      <FeaturedCourses />
+      <FeaturedCourses courses={courseData} />
     </div>
   );
 }
@@ -41,6 +42,34 @@ function Hero() {
   );
 }
 
-function FeaturedCourses(courses: { courses: Course }) {
-  return <div></div>;
+function FeaturedCourses({ courses }: { courses: Course[] }) {
+  return (
+    <div className={styles.featuredCourses}>
+      <h1>Featured Courses</h1>
+      <div className={styles.coursesHolder}>
+        {courses.map((course) => (
+          <div className={styles.course}>
+            <img
+              src={course.coverImg}
+              alt={course.title}
+              className={styles.courseImage}
+            ></img>
+            <div className={styles.courseInfo}>
+              <div>
+                <h2 className={styles.courseTitle}>{course.title}</h2>
+                <h4>Duration: {course.duration.toFixed(1)} Hours</h4>
+              </div>
+              <div>
+                <h4>Enrolled Students:{course.enrolledStudents}</h4>
+                <h4>RATING</h4>
+              </div>
+            </div>
+            <div className={styles.courseDescription}>
+              <p>{course.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
