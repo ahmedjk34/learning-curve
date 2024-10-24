@@ -1,7 +1,10 @@
+"use client";
 import Link from "next/link";
 import styles from "./page.module.scss";
 import { Course } from "@/Types";
 import courseData from "@/courseData";
+import { v4 } from "uuid";
+import { Rating } from "react-simple-star-rating";
 
 export default function Home() {
   return (
@@ -50,24 +53,37 @@ function FeaturedCourses({ courses }: { courses: Course[] }) {
       <h1>Featured Courses</h1>
       <div className={styles.coursesHolder}>
         {courses.map((course) => (
-          <div className={styles.course}>
-            <img
-              src={course.coverImg}
-              alt={course.title}
-              className={styles.courseImage}
-            ></img>
+          <div className={styles.course} key={v4()}>
+            <div className={styles.imageHolder}>
+              <img
+                src={course.coverImg}
+                alt={course.title}
+                className={styles.courseImage}
+              ></img>
+              <span>{course.price}$</span>
+            </div>
             <div className={styles.courseInfo}>
-              <div>
-                <h2 className={styles.courseTitle}>{course.title}</h2>
-                <h4>Duration: {course.duration.toFixed(1)} Hours</h4>
-              </div>
-              <div>
-                <h4>Enrolled Students:{course.enrolledStudents}</h4>
-                <h4>RATING</h4>
+              <h2 className={styles.courseTitle}>{course.title}</h2>
+              <div className={styles.subInfoHolder}>
+                <h4>
+                  <span>Duration: </span> {course.duration.toFixed(1)} Hours
+                </h4>
+                <h4>
+                  <span>Enrolled Students: </span>
+                  {course.enrolledStudents}
+                </h4>
               </div>
             </div>
             <div className={styles.courseDescription}>
               <p>{course.description}</p>
+            </div>
+            <div className={styles.courseActions}>
+              <button>Buy Now</button>
+              <Rating
+                initialValue={course.rating}
+                readonly={true}
+                allowFraction={true}
+              />
             </div>
           </div>
         ))}

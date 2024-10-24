@@ -74,31 +74,86 @@
       width: 100%;
       flex-wrap: wrap;
       padding: 2rem 2.5rem;
-      gap: 1rem;
+      gap: 1.25rem;
       justify-content: center;
       .course {
-        height: 400px;
-        min-width: 300px;
+        font-family: v.$primary-font;
+        min-height: 500px;
+        min-width: 350px;
         flex: 1;
         box-shadow: 0px 8px v.$primary-color, 0 12px v.$secondary-color;
         border-radius: 1rem;
-        overflow: hidden;
         border: 3px solid v.$primary-color;
         border-bottom: none;
+        overflow: hidden;
+        transition: all 0.3s linear;
+        display: flex;
+        flex-direction: column;
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.02) translateY(-10px);
+        }
+        .imageHolder {
+          position: relative;
+          .courseImage {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50%;
+            padding: 1rem;
+            border-radius: 2rem;
+          }
+          span {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            color: green;
+            border-radius: 0.75rem;
+            padding: 0.25rem;
+            background-color: white;
+          }
+        }
         .courseInfo {
-          display: flex;
-          justify-content: space-between;
+          padding: 1rem;
           .courseTitle {
             font-family: v.$title-font;
+            grid-column: 1/3;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+          }
+          .subInfoHolder {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            h4 {
+              //for highlighting
+              color: rgba($color: #000000, $alpha: 0.8);
+              span {
+                color: v.$secondary-color;
+              }
+            }
           }
         }
         .courseDescription {
+          padding: 1rem;
+          border-bottom: 1px solid v.$primary-color;
         }
-        .courseImage {
+        .courseActions {
+          display: flex;
           width: 100%;
-          height: 50%;
-          object-fit: cover;
-          object-position: 50%;
+          padding: 1rem;
+          button {
+            background-color: goldenrod;
+            color: white;
+            outline: none;
+            border: none;
+            border-radius: 1rem;
+            font-family: inherit;
+            padding: 0.5rem;
+            &:hover {
+              cursor: pointer;
+            }
+          }
         }
       }
     }
