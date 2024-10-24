@@ -6,7 +6,7 @@
     grid-template: 1fr /1fr 1fr;
     padding: 1.25rem;
     box-shadow: 0 10px v.$primary-color, 0px 14px v.$neutral-color;
-    // border-radius: 1rem;
+    border-radius: 1rem;
     .heroInfo {
       font-family: v.$primary-font;
       font-weight: 400;
@@ -23,6 +23,11 @@
       p {
         margin-top: 1rem;
         font-size: 1.1rem;
+      }
+      //for highlighting
+      span {
+        color: v.$secondary-color;
+        font-weight: 900;
       }
       .heroActionsHolder {
         display: flex;
@@ -51,7 +56,7 @@
     }
     .heroImage {
       width: auto;
-      max-height: 75vh;
+      max-height: 60vh;
       margin: auto;
       animation: slideInRight 1s ease-out forwards;
     }
