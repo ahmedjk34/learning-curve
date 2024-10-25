@@ -69,89 +69,101 @@
     h1 {
       @include m.title;
     }
-    .coursesHolder {
+
+    .coursesSlider {
       display: flex;
-      width: 100%;
-      flex-wrap: wrap;
+      overflow: hidden;
       padding: 2rem 2.5rem;
-      gap: 1.25rem;
-      justify-content: center;
-      .course {
-        font-family: v.$primary-font;
-        min-height: 500px;
-        min-width: 350px;
-        flex: 1;
-        box-shadow: 0px 8px v.$primary-color, 0 12px v.$secondary-color;
-        border-radius: 1rem;
-        border: 3px solid v.$primary-color;
-        border-bottom: none;
-        overflow: hidden;
-        transition: all 0.3s linear;
+      position: relative;
+
+      .coursesSlide {
         display: flex;
-        flex-direction: column;
+        animation: slideEffect 29s linear infinite;
+        gap: 1.25rem;
+        width: fit-content;
+        white-space: nowrap;
         &:hover {
-          cursor: pointer;
-          transform: scale(1.02) translateY(-10px);
+          animation-play-state: paused;
         }
-        .imageHolder {
-          position: relative;
-          .courseImage {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: 50%;
+
+        .course {
+          font-family: v.$primary-font;
+          min-height: 500px;
+          width: 450px;
+          flex: 1;
+          box-shadow: 0px 8px v.$primary-color, 0 12px v.$secondary-color;
+          border-radius: 1rem;
+          border: 3px solid v.$primary-color;
+          border-bottom: none;
+          overflow: hidden;
+          transition: all 0.3s linear;
+          display: flex;
+          flex-direction: column;
+          &:hover {
+            cursor: pointer;
+            transform: scale(1.02) translateY(-10px);
+          }
+          .imageHolder {
+            position: relative;
+            .courseImage {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: 50%;
+              padding: 1rem;
+              border-radius: 2rem;
+            }
+            span {
+              position: absolute;
+              bottom: 2rem;
+              right: 2rem;
+              color: green;
+              border-radius: 0.75rem;
+              padding: 0.25rem;
+              background-color: white;
+            }
+          }
+          .courseInfo {
             padding: 1rem;
-            border-radius: 2rem;
-          }
-          span {
-            position: absolute;
-            bottom: 2rem;
-            right: 2rem;
-            color: green;
-            border-radius: 0.75rem;
-            padding: 0.25rem;
-            background-color: white;
-          }
-        }
-        .courseInfo {
-          padding: 1rem;
-          .courseTitle {
-            font-family: v.$title-font;
-            grid-column: 1/3;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-          }
-          .subInfoHolder {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            h4 {
-              //for highlighting
-              color: rgba($color: #000000, $alpha: 0.8);
-              span {
-                color: v.$secondary-color;
+            .courseTitle {
+              font-family: v.$title-font;
+              grid-column: 1/3;
+              margin-bottom: 1rem;
+              font-size: 1.4rem;
+            }
+            .subInfoHolder {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+              h4 {
+                //for highlighting
+                color: rgba($color: #000000, $alpha: 0.8);
+                span {
+                  color: v.$secondary-color;
+                }
               }
             }
           }
-        }
-        .courseDescription {
-          padding: 1rem;
-          border-bottom: 1px solid v.$primary-color;
-        }
-        .courseActions {
-          display: flex;
-          width: 100%;
-          padding: 1rem;
-          button {
-            background-color: goldenrod;
-            color: white;
-            outline: none;
-            border: none;
-            border-radius: 1rem;
-            font-family: inherit;
-            padding: 0.5rem;
-            &:hover {
-              cursor: pointer;
+          .courseDescription {
+            padding: 1rem;
+            border-bottom: 1px solid v.$primary-color;
+            text-wrap: wrap;
+          }
+          .courseActions {
+            display: flex;
+            width: 100%;
+            padding: 1rem;
+            button {
+              background-color: goldenrod;
+              color: white;
+              outline: none;
+              border: none;
+              border-radius: 1rem;
+              font-family: inherit;
+              padding: 0.5rem;
+              &:hover {
+                cursor: pointer;
+              }
             }
           }
         }
@@ -159,7 +171,14 @@
     }
   }
 }
-
+@keyframes slideEffect {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
 // Keyframes for sliding in
 @keyframes slideInLeft {
   0% {
