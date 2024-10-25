@@ -11,6 +11,7 @@ export default function Home() {
     <div className={styles.homePage}>
       <Hero />
       <FeaturedCourses courses={courseData} />
+      <MoreAboutUs />
     </div>
   );
 }
@@ -90,6 +91,14 @@ function FeaturedCourses({ courses }: { courses: Course[] }) {
           ))}
         </div>
       </div>
+    </div>
+  );
+}
+
+function MoreAboutUs() {
+  return (
+    <div className={styles.moreAboutUs}>
+      <h1>More About Us</h1>
     </div>
   );
 }
