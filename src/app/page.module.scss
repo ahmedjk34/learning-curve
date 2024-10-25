@@ -1,6 +1,7 @@
 @use "../styles/variables" as v;
 @use "../styles/mixins" as m;
 .homePage {
+  font-family: v.$primary-font;
   .hero {
     display: grid;
     grid-template: 1fr /1fr 1fr;
@@ -166,6 +167,41 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+  .moreAboutUs {
+    h1 {
+      @include m.title;
+      margin-top: 2rem;
+    }
+    .cardsHolder {
+      display: flex;
+      gap: 2rem;
+      justify-content: space-evenly;
+      margin-top: 2rem;
+      padding: 1rem;
+      .card {
+        flex: 1;
+        max-width: 325px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem;
+        border: 2px solid v.$primary-color;
+        border-radius: 1rem;
+        box-shadow: 4px 9px black;
+        border-bottom: none;
+        h2 {
+          margin-top: 0.75rem;
+          color: v.$neutral-color;
+          font-size: 2rem;
+        }
+        img {
+          width: 100%;
+          height: auto;
+          padding: 2rem;
         }
       }
     }
