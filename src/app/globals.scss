@@ -15,6 +15,7 @@ body {
   //max width for the pages
   & > div {
     max-width: 2000px;
+    overflow-x: hidden;
   }
 }
 html {
