@@ -1,8 +1,16 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import styles from "../page.module.scss";
+import "animate.css/animate.compat.css";
+import ScrollAnimation from "react-animate-on-scroll";
 
-function Counter({ targetNumber, duration }) {
+function Counter({
+  targetNumber,
+  duration,
+}: {
+  targetNumber: number;
+  duration: number;
+}) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -59,19 +67,21 @@ export default function MoreAboutUs() {
   return (
     <div className={styles.moreAboutUs} ref={ref}>
       <h1>More About Us</h1>
-      <div className={styles.cardsHolder}>
-        {moreAboutUsData.map((cardInfo, index) => (
-          <div className={styles.card} key={index}>
-            <img src={cardInfo.image} alt={cardInfo.title} />
-            {startCounting ? (
-              <Counter targetNumber={cardInfo.number} duration={2000} />
-            ) : (
-              <h2>0</h2>
-            )}
-            <h3>{cardInfo.title}</h3>
-          </div>
-        ))}
-      </div>
+      <ScrollAnimation animateIn="fadeIn" animateOnce={true} delay={0.3}>
+        <div className={styles.cardsHolder}>
+          {moreAboutUsData.map((cardInfo, index) => (
+            <div className={styles.card} key={index}>
+              <img src={cardInfo.image} alt={cardInfo.title} />
+              {startCounting ? (
+                <Counter targetNumber={cardInfo.number} duration={2000} />
+              ) : (
+                <h2>0</h2>
+              )}
+              <h3>{cardInfo.title}</h3>
+            </div>
+          ))}
+        </div>
+      </ScrollAnimation>
     </div>
   );
 }
