@@ -3,6 +3,7 @@ import styles from "../page.module.scss";
 import { Course } from "@/Types";
 import { v4 } from "uuid";
 import { Rating } from "react-simple-star-rating";
+import { FaShoppingCart } from "react-icons/fa";
 
 export default function FeaturedCourses({ courses }: { courses: Course[] }) {
   return (
@@ -36,7 +37,10 @@ export default function FeaturedCourses({ courses }: { courses: Course[] }) {
                 <p>{course.description}</p>
               </div>
               <div className={styles.courseActions}>
-                <button>Buy Now</button>
+                <button>
+                  Buy Now
+                  <FaShoppingCart />
+                </button>
                 <Rating
                   initialValue={course.rating}
                   readonly={true}
