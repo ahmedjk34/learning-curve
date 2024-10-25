@@ -40,7 +40,7 @@ function Hero() {
         </div>
       </div>
       <img
-        src="./hero-image.png"
+        src="./home/hero-image.png"
         alt="hero image"
         className={styles.heroImage}
       />
